@@ -5,6 +5,7 @@ import com.codestates.section2week4.coffee.CoffeeService;
 import com.codestates.section2week4.member.MemberRepository;
 import com.codestates.section2week4.member.MemberService;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 // Java로 작성한 Config
@@ -27,25 +28,32 @@ import org.springframework.context.annotation.Configuration;
 //}
 
 // Bean을 이용하여 작성한 Config
+//@Configuration
+//public class DependencyConfig {
+//    @Bean
+//    public MemberService memberService() {
+//        return new MemberService(memberRepository());
+//    }
+//
+//    @Bean
+//    public MemberRepository memberRepository() {
+//        return new MemberRepository();
+//    }
+//
+//    @Bean
+//    public CoffeeService coffeeService() {
+//        return new CoffeeService(coffeeRepository());
+//    }
+//
+//    @Bean
+//    public CoffeeRepository coffeeRepository() {
+//        return new CoffeeRepository();
+//    }
+//}
+
+// @ComponentScan을 이용한 Config 작성
 @Configuration
+@ComponentScan
 public class DependencyConfig {
-    @Bean
-    public MemberService memberService() {
-        return new MemberService(memberRepository());
-    }
 
-    @Bean
-    public MemberRepository memberRepository() {
-        return new MemberRepository();
-    }
-
-    @Bean
-    public CoffeeService coffeeService() {
-        return new CoffeeService(coffeeRepository());
-    }
-
-    @Bean
-    public CoffeeRepository coffeeRepository() {
-        return new CoffeeRepository();
-    }
 }
